@@ -1,6 +1,6 @@
-Џроект создан в VS 2015.
+РџСЂРѕРµРєС‚ СЃРѕР·РґР°РЅ РІ VS 2015.
 
-Ћписание заданиЯ в файле TestTaskTrianglesIntersection.jpg.
+РћРїРёСЃР°РЅРёРµ Р·Р°РґР°РЅРёСЏ РІ С„Р°Р№Р»Рµ TestTaskTrianglesIntersection.jpg.
 
-‚ Relese конфигурации не смог быстро избавиться от предупреждения
+Р’ Relese РєРѕРЅС„РёРіСѓСЂР°С†РёРё РЅРµ СЃРјРѕРі Р±С‹СЃС‚СЂРѕ РёР·Р±Р°РІРёС‚СЊСЃСЏ РѕС‚ РїСЂРµРґСѓРїСЂРµР¶РґРµРЅРёСЏ
 LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/LTCG' specification
