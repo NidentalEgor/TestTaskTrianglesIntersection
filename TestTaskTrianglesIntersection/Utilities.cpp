@@ -58,18 +58,18 @@ bool AreSegmentsIntersect(
 
 	const double alpha_beta_denominator = A.Y() * B.X() - A.X() * B.Y();
 	const double alpha_numinator = B.Y() * C.X() - B.X() * C.Y();
-	if ((alpha_beta_denominator > std::numeric_limits<double>::epsilon() &&
-		alpha_numinator >= std::numeric_limits<double>::epsilon() &&
+	if ((alpha_beta_denominator > 0.0 &&
+		alpha_numinator >= 0.0 &&
 		alpha_numinator <= alpha_beta_denominator)
 		||
-		(alpha_beta_denominator < std::numeric_limits<double>::epsilon() &&
-		alpha_numinator <= std::numeric_limits<double>::epsilon() &&
+		(alpha_beta_denominator < 0.0 &&
+		alpha_numinator <= 0.0 &&
 		alpha_numinator >= alpha_beta_denominator))
 	{
 		const double beta_numinator = A.X() * C.Y() - A.Y() * C.X();
-		if (alpha_beta_denominator > std::numeric_limits<double>::epsilon())
+		if (alpha_beta_denominator > 0.0)
 		{
-			if (beta_numinator >= std::numeric_limits<double>::epsilon() &&
+			if (beta_numinator >= 0.0 &&
 				beta_numinator <= alpha_beta_denominator)
 			{
 				return true;
@@ -77,7 +77,7 @@ bool AreSegmentsIntersect(
 		}
 		else
 		{
-			if (beta_numinator <= std::numeric_limits<double>::epsilon() &&
+			if (beta_numinator <= 0.0 &&
 				beta_numinator >= alpha_beta_denominator)
 			{
 				return true;

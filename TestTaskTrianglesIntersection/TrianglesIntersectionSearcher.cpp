@@ -365,9 +365,9 @@ bool TrianglesIntersectionSearcher::IsSameSignOfDistances(
 		const TriangleDescription& triangle_description) const
 {
 	return triangle_description.first_point_to_plane_distance *
-			triangle_description.second_point_to_plane_distance > std::numeric_limits<double>::epsilon() &&
+			triangle_description.second_point_to_plane_distance > 0.0 &&
 			triangle_description.first_point_to_plane_distance *
-			triangle_description.third_point_to_plane_distance > std::numeric_limits<double>::epsilon();
+			triangle_description.third_point_to_plane_distance > 0.0;
 }
 
 ParametersTPtr TrianglesIntersectionSearcher::CalculateIntervals(
@@ -405,7 +405,8 @@ ParametersTPtr TrianglesIntersectionSearcher::CalculateIntervals(
 				triangle_description.third_point_to_plane_distance
 		);
 	}
-	else if(std::abs(triangle_description.first_point_to_plane_distance) > std::numeric_limits<double>::epsilon())
+	else if(std::abs(triangle_description.first_point_to_plane_distance) >
+			std::numeric_limits<double>::epsilon())
 	{
 		// Second and third triangle points are on the same side.
 		parameters = CalculateParametersT(
@@ -416,7 +417,8 @@ ParametersTPtr TrianglesIntersectionSearcher::CalculateIntervals(
 				triangle_description.second_point_to_plane_distance,
 				triangle_description.third_point_to_plane_distance);
 	}
-	else if(std::abs(triangle_description.second_point_to_plane_distance) > std::numeric_limits<double>::epsilon())
+	else if(std::abs(triangle_description.second_point_to_plane_distance) >
+			std::numeric_limits<double>::epsilon())
 	{
 		parameters = CalculateParametersT(
 				triangle_second_point_projection,
@@ -426,7 +428,8 @@ ParametersTPtr TrianglesIntersectionSearcher::CalculateIntervals(
 				triangle_description.first_point_to_plane_distance,
 				triangle_description.third_point_to_plane_distance);
 	}
-	else if(std::abs(triangle_description.third_point_to_plane_distance) > std::numeric_limits<double>::epsilon())
+	else if(std::abs(triangle_description.third_point_to_plane_distance) >
+			std::numeric_limits<double>::epsilon())
 	{
 		parameters = CalculateParametersT(
 				triangle_third_point_projection,
